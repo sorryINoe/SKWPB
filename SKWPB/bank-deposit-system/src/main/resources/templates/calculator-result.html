@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Результаты расчёта</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">Банк "Вклады Онлайн"</a>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <h1>Результаты расчёта</h1>
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Итоговый расчёт</h5>
+      <table class="table">
+        <tr>
+          <td><strong>Начальная сумма:</strong></td>
+          <td><span th:text="${initial}"></span> ₽</td>
+        </tr>
+        <tr>
+          <td><strong>Годовая ставка:</strong></td>
+          <td><span th:text="${rate}"></span>%</td>
+        </tr>
+        <tr>
+          <td><strong>Срок вклада:</strong></td>
+          <td><span th:text="${months}"></span> месяцев</td>
+        </tr>
+        <tr class="table-success">
+          <td><strong>Начисленные проценты:</strong></td>
+          <td><span th:text="${interest}"></span> ₽</td>
+        </tr>
+        <tr class="table-primary h4">
+          <td><strong>Итоговая сумма:</strong></td>
+          <td><span th:text="${total}"></span> ₽</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <a href="/calculator" class="btn btn-primary">Новый расчёт</a>
+    <a href="/" class="btn btn-secondary">На главную</a>
+  </div>
+</div>
+</body>
+</html>
